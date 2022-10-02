@@ -37,11 +37,3 @@ jobs:
     steps:
     - name: Deploy to Staging-EU
       run: echo Deploying to Staging-EU ...
-
-  deploy-Prod-EU:
-    runs-on: ubuntu-latest
-    needs: test
-    environment: Prod-EU
-    steps:
-    - name: Deploy to Prod-EU
-      run: echo Deploying to Prod-EU ...

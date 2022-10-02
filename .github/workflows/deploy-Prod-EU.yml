@@ -1,0 +1,13 @@
+name: deploy-Prod-EU
+
+# Manually triggered workflow
+on: workflow_dispatch
+
+jobs:
+
+  deploy-Prod-EU:
+    runs-on: ubuntu-latest
+    environment: Prod-EU
+    steps:
+    - name: Deploy to Prod-EU
+      run: echo Deploying to Prod-EU ...
