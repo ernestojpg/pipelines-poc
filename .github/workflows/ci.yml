@@ -21,3 +21,19 @@ jobs:
       run: echo We do some tests here ...
     - name: Test phase 2
       run: echo And then we do more tests here ....
+
+  deploy-QA-EU:
+    runs-on: ubuntu-latest
+    needs: test
+    environment: QA-EU
+    steps:
+    - name: Deploy to QA-EU
+      run: echo Deploying to QA-EU ...
+
+  deploy-Staging-EU:
+    runs-on: ubuntu-latest
+    needs: deploy-QA-EU
+    environment: Staging-EU
+    steps:
+    - name: Deploy to Staging-EU
+      run: echo Deploying to Staging-EU ...
